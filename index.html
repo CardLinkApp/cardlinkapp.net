@@ -13,14 +13,19 @@
     h1 { font-size: 32px; font-weight: 900; margin-bottom: 8px; }
     .subtitle { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
     .message { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 32px; padding: 20px; background: rgba(255,255,255,0.08); border-radius: 16px; }
-    .download-btn { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #FFCB05, #FFB800); color: #1a0e3a; text-decoration: none; font-size: 18px; font-weight: 800; padding: 16px 40px; border-radius: 50px; box-shadow: 0 6px 24px rgba(255,203,5,0.35); transition: transform 0.2s; }
+    .buttons { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+    .download-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; text-decoration: none; font-size: 17px; font-weight: 800; padding: 16px 40px; border-radius: 50px; transition: transform 0.2s; }
     .download-btn:hover { transform: scale(1.05); }
+    .btn-ios { background: linear-gradient(135deg, #FFCB05, #FFB800); color: #1a0e3a; box-shadow: 0 6px 24px rgba(255,203,5,0.35); }
+    .btn-android { background: linear-gradient(135deg, #34A853, #0F9D58); color: white; box-shadow: 0 6px 24px rgba(52,168,83,0.35); }
     .footer { margin-top: 40px; font-size: 14px; color: rgba(255,255,255,0.3); }
   </style>
   <script>
     var ua = navigator.userAgent || '';
-    if (/iPhone|iPad|iPod/i.test(ua) || /Android/i.test(ua)) {
+    if (/iPhone|iPad|iPod/i.test(ua)) {
       window.location.href = 'https://apps.apple.com/app/cardlink/id6744374498';
+    } else if (/Android/i.test(ua)) {
+      window.location.href = 'https://play.google.com/store/apps/details?id=app.emergent.tcgportfoliodemocf16b4e8';
     }
   </script>
 </head>
@@ -29,8 +34,11 @@
     <img src="WhatsApp Image 2026-04-03 at 01.05.39.jpeg" alt="CardLink" class="logo">
     <h1>CardLink</h1>
     <p class="subtitle">Portfolio Pokémon TCG</p>
-    <div class="message">📱 Pour voir ce contenu, téléchargez l'application <strong>CardLink</strong> sur l'App Store.</div>
-    <a href="https://apps.apple.com/app/cardlink/id6744374498" class="download-btn">🍎 Télécharger sur l'App Store</a>
+    <div class="message">📱 Pour voir ce contenu, téléchargez l'application <strong>CardLink</strong> sur l'App Store ou Google Play.</div>
+    <div class="buttons">
+      <a href="https://apps.apple.com/app/cardlink/id6744374498" class="download-btn btn-ios">🍎 Télécharger sur l'App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=app.emergent.tcgportfoliodemocf16b4e8" class="download-btn btn-android">🤖 Télécharger sur Google Play</a>
+    </div>
     <p class="footer">cardlinkapp.net</p>
   </div>
 </body>
