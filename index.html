@@ -1,0 +1,40 @@
+Cliquez sur "Add file" → "Create new file"
+Nom : index.html
+Collez ce contenu :
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CardLink - Portfolio Pokémon TCG</title>
+  <meta name="apple-itunes-app" content="app-id=6744374498">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(155deg, #0a0e27 0%, #1a1040 35%, #2d1b69 65%, #1a0e3a 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; color: white; }
+    .container { text-align: center; padding: 40px 20px; max-width: 400px; }
+    .logo { width: 120px; height: 120px; background: linear-gradient(135deg, #FFCB05, #FF8C00); border-radius: 28px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-size: 60px; box-shadow: 0 8px 32px rgba(255,203,5,0.3); }
+    h1 { font-size: 32px; font-weight: 900; margin-bottom: 8px; }
+    .subtitle { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
+    .message { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 32px; padding: 20px; background: rgba(255,255,255,0.08); border-radius: 16px; }
+    .download-btn { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #FFCB05, #FFB800); color: #1a0e3a; text-decoration: none; font-size: 18px; font-weight: 800; padding: 16px 40px; border-radius: 50px; box-shadow: 0 6px 24px rgba(255,203,5,0.35); transition: transform 0.2s; }
+    .download-btn:hover { transform: scale(1.05); }
+    .footer { margin-top: 40px; font-size: 14px; color: rgba(255,255,255,0.3); }
+  </style>
+  <script>
+    var ua = navigator.userAgent || '';
+    if (/iPhone|iPad|iPod/i.test(ua) || /Android/i.test(ua)) {
+      window.location.href = 'https://apps.apple.com/app/cardlink/id6744374498';
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">⚡</div>
+    <h1>CardLink</h1>
+    <p class="subtitle">Portfolio Pokémon TCG</p>
+    <div class="message">📱 Pour voir ce contenu, téléchargez l'application <strong>CardLink</strong> sur l'App Store.</div>
+    <a href="https://apps.apple.com/app/cardlink/id6744374498" class="download-btn">🍎 Télécharger sur l'App Store</a>
+    <p class="footer">cardlinkapp.net</p>
+  </div>
+</body>
+</html>
