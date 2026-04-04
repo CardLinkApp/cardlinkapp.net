@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "8F4AR6JJSL.app.emergent.tcgportfoliodemocf16b4e8",
+        "paths": [
+          "/collection/*",
+          "/card/*",
+          "/user/*",
+          "/marketplace/*",
+          "/post/*"
+        ]
+      }
+    ]
+  }
+}
