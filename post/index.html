@@ -33,12 +33,29 @@
     .footer { margin-top: 40px; font-size: 14px; color: rgba(255,255,255,0.3); }
   </style>
   <script>
-    var ua = navigator.userAgent || '';
-    if (/iPhone|iPad|iPod/i.test(ua)) {
-      window.location.href = 'https://apps.apple.com/app/cardlink/id6761582201';
-    } else if (/Android/i.test(ua)) {
-      window.location.href = 'https://play.google.com/store/apps/details?id=com.cardlink.pro';
-    }
+    (function(){
+      var ua = navigator.userAgent || '';
+      var ios = /iPhone|iPad|iPod/i.test(ua);
+      var android = /Android/i.test(ua);
+      var appstore = 'https://apps.apple.com/app/cardlink/id6761582201';
+      var playstore = 'https://play.google.com/store/apps/details?id=com.cardlink.pro';
+      // Build deep link from current path + query params
+      var path = window.location.pathname.replace(/\/$/, '');
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get('id') || params.get('user') || '';
+      var deepPath = path.replace(/^\//, '') + (id ? '/' + id : '');
+      var deepLink = 'cardlink://' + deepPath;
+      if (ios || android) {
+        var storeUrl = ios ? appstore : playstore;
+        if (deepLink && id) {
+          var t = setTimeout(function(){ window.location.replace(storeUrl); }, 1500);
+          window.addEventListener('blur', function(){ clearTimeout(t); });
+          window.location = deepLink;
+        } else {
+          window.location.replace(storeUrl);
+        }
+      }
+    })();
   </script>
 </head>
 <body>
@@ -55,4 +72,3 @@
   </div>
 </body>
 </html>
-
